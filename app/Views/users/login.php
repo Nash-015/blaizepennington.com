@@ -1,19 +1,26 @@
+<div class="container">
+  <div class="row justify-content-lg-center">
+    <div class="login-container col">
+      <div class="form-group">
+        <h2 class="display-2">Login</h2>
+      </div>
+      <form action="login" method="post" accept-charset="utf-8">
 
-<h2>Login</h2>
-<form action="login" method="post" accept-charset="utf-8">
+        <div class="form-group">
+          <label for="username">Username:</label>
+          <input type="text" name="username" class="form-control" placeholder="Enter Username" />
+        </div>
 
-  <div class="formField">
-    <label for="username">Username:</label>
-    <input type="text" name="username" />
-  </div>
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input type="password" name="password" class="form-control" placeholder="Enter Password" />
+        </div>
 
-  <div class="formField">
-    <label for="password">Password:</label>
-    <input type="password" name="password" />
-  </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary btn-block">Go</button>
+        </div>
+      </div>
 
-  <div class="submitField">
-    <input type="submit" class="btn btn-primary" value="Go" />
-  </div>
-
-</form>
+      </form>
+    </div>
+</div>
