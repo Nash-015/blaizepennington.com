@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
 
-  <title><?= esc($title);?></title>
+  <title><?=esc($title);?></title>
 </head>
 
 <nav>
