@@ -2,8 +2,9 @@
   <div class="row justify-content-lg-center">
     <div class="card border-primary mb-3">
       <div class="card-body">
+        <?= $validation->listErrors(); ?>
         <h2 class="title">Registration</h2>
-        <form method="post">
+        <form method="post" action="/users/register">
 
           <div class="row">
             <div class="col-lg-6 col-md-12">
