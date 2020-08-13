@@ -1,6 +1,8 @@
 <?php namespace App\Controllers;
 
 use CodeIgniter\Controller;
+use App\Models\UserModel;
+use CodeIgniter\I18n\Time;
 
 class Users extends Controller
 {
@@ -24,14 +26,8 @@ class Users extends Controller
   public function register()
   {
     helper(['form', 'url']);
+    $model = new UserModel();
 
-    //$validation = \Config\Services::validation();
-    // $validation->setRules(['userName' => ['label' => 'Username', 'rules' => 'required'],
-    // 'firstName' => ['label' => 'First Name', 'rules' => 'required'],
-    // 'lastName' => ['label' => 'lastName', 'rules' => 'required'],
-    // 'email' => ['label' => 'email', 'rules' => 'required'],
-    // 'password1' => ['label' => 'Password', 'rules' => 'required'],
-    // 'password2' => ['label' => 'Repeat Password', 'rules' => 'required']]);
     if($this->request->getPost())
     {
       if(! $this->validate('signup'))
@@ -42,6 +38,16 @@ class Users extends Controller
       }
       else
       {
+        $model->save([
+          'username' => $this->request->getPost('userName'),
+          'firstName' => $this->request->getPost('firstName'),
+          'lastName' => $this->request->getPost('lastName'),
+          'email' => $this->request->getPost('email'),
+          'password' => $this->request->getPost('password1'),
+          'created' => new Time('now'),
+          'modified' => new Time('now'),
+          'isActive' => true
+        ]);
         echo view('templates/header', ['title' => 'Success!']);
         echo view('users/success');
         echo view('templates/footer');

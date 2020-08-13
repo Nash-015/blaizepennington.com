@@ -47,7 +47,7 @@ class Validation
 
 		'email' => [
 			'label' => 'email',
-			'rules' => 'required|valid_email|min_length[5]|max_length[30]'],
+			'rules' => 'required|valid_email|min_length[5]|max_length[50]'],
 
 		'password1' => [
 			'label' => 'Password',
