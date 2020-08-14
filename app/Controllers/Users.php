@@ -43,7 +43,7 @@ class Users extends Controller
           'firstName' => $this->request->getPost('firstName'),
           'lastName' => $this->request->getPost('lastName'),
           'email' => $this->request->getPost('email'),
-          'password' => $this->request->getPost('password1'),
+          'password' => password_hash($this->request->getPost('password1'), PASSWORD_BCRYPT, ['cost' => 12]),
           'created' => new Time('now'),
           'modified' => new Time('now'),
           'isActive' => true
