@@ -4,7 +4,7 @@
       <div class="form-group">
         <h2 class="display-2">Login</h2>
       </div>
-      <form action="login" method="post" accept-charset="utf-8">
+      <form action="/users/login" method="post" accept-charset="utf-8">
 
         <div class="form-group">
           <label for="username">Username:</label>
