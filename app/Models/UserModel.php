@@ -25,4 +25,22 @@ class UserModel extends Model
       return false;
     }
   }
+
+  public function setUser($username){
+    $session = session();
+    $db = \Config\Database::connect();
+    $query = $db->query('SELECT * FROM users WHERE username = \'' . $username . '\' LIMIT 1');
+    $user = $query->getRow();
+
+    $data = [
+      'id' => $user->id,
+      'username' => $user->username,
+      'firstName' => $user->firstName,
+      'lastName' => $user->lastName,
+      'email' => $user->email,
+      'logged_in' => true
+    ];
+
+    $session->set($data);
+  }
 }

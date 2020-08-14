@@ -11,8 +11,11 @@
   <title><?=esc($title);?></title>
 </head>
 
+<?php $session = session();?>
+<body>
+<?php if($session->logged_in): ?>
+<div>Welcome, <?= esc($session->firstName);?></div>
+<?php endif; ?>
 <nav>
 
 </nav>
-
-<body>

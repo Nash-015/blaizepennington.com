@@ -27,6 +27,7 @@ class Users extends Controller
       $password = $this->request->getPost('password');
 
       if($model->login($username, $password)){
+        $model->setUser($username);
         echo view('templates/header', $data);
         echo view('users/login_success', ['user' => $username]);
         echo view('templates/footer');
