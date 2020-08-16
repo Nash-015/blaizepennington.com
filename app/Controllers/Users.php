@@ -81,8 +81,15 @@ class Users extends Controller
       echo view('users/register', ['validation' => $this->validator]);
       echo view('templates/footer');
     }
+  }
 
+  public function logout()
+  {
+    $session = session();
+    $session->destroy();
 
-
+    echo view('templates/header', ['title' => 'Login']);
+    echo view('users/login');
+    echo view('templates/footer');
   }
 }

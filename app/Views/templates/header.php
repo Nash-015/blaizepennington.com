@@ -14,7 +14,7 @@
 <?php $session = session();?>
 <body>
 <?php if($session->logged_in): ?>
-<div>Welcome, <?= esc($session->firstName);?></div>
+<div>Welcome, <?= esc($session->firstName);?> | <a href="/users/logout">Logout</a></div>
 <?php endif; ?>
 <nav>
 
